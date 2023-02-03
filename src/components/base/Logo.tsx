@@ -1,17 +1,17 @@
 import React from 'react'
 
-export function Logo({ logoSrc, className, wrapperClasses }: { logoSrc: string, className?: string, wrapperClasses?: string }) {
+export function Logo({ className, wrapperClasses, logoSrc }: { className?: string, wrapperClasses?: string, logoSrc: string }) {
     return (
         <>
             <figure
-                className={`flex items-center w-fit h-full xl:w-fit ${wrapperClasses}`}
+                className={`flex items-center ${wrapperClasses}`}
             >
                 <img
                     className={`object-cover ${className}`}
                     src={logoSrc}
                     alt={'logo img'}
-                    width={162}
-                    height={27}
+                    width={139}
+                    height={20}
                 />
             </figure>
         </>
