@@ -37,7 +37,7 @@ module.exports = {
             fontWeight: '400',
           },
         ],
-        x3: [
+        '3xl': [
           '32px',
           {
             letterSpacing: '-0.5px',

@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Hero data={heroData} />
       <FeaturesView data={{ featureIntroData, featuresData }} />
-      <BlogCards />
+      <BlogCards data={blogCardsData} />
     </>
   )
 }
@@ -26,7 +26,6 @@ const heroData = {
 }
 
 // Features Data
-
 const featureIntroData = {
   featureIntroHeading: 'Why choose Easybank?',
   featureIntroDescription:
@@ -59,3 +58,36 @@ const featuresData = [
       'Manage your savings, investments, pension, and much more from one account. Tracking your money has never been easier.',
   },
 ]
+
+// Blog Cards Data
+const blogCardsData = {
+  blogCardsHeading: 'Latest Articles',
+  blogCards: [
+    {
+      blogCardImage: '/images/image-currency.jpg',
+      blogCardHeading: 'Receive money in any currency with no fees',
+      blogCardDescription:
+        'The world is getting smaller and we’re becoming more mobile. So why should you be forced to only receive money in a single …',
+      blogCardAuthor: 'By Claire Robinson',
+    },
+    {
+      blogCardImage: '/images/image-restaurant.jpg',
+      blogCardHeading: 'Treat yourself without worrying about money',
+      blogCardDescription:
+        'Our simple budgeting feature allows you to separate out your spending and set realistic limits each month. That means you …',
+      blogCardAuthor: 'By Wilson Hutton',
+    },
+    {
+      blogCardImage: '/images/image-plane.jpg',
+      blogCardHeading: 'Take your Easybank card wherever you go',
+      blogCardDescription: 'We want you to enjoy your travels. This is why we don’t charge any fees on purchases while you’re abroad. We’ll even show you …',
+      blogCardAuthor: 'By Wilson Hutton',
+    },
+    {
+      blogCardImage: '/images/image-confetti.jpg',
+      blogCardHeading: 'Our invite-only Beta accounts are now live!',
+      blogCardDescription: 'After a lot of hard work by the whole team, we’re excited to launch our closed beta. It’s easy to request an invite through the site ...',
+      blogCardAuthor: 'By Claire Robinson',
+    },
+  ]
+}

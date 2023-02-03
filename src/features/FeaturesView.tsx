@@ -19,7 +19,7 @@ interface FeaturesViewProps {
 }
 
 function FeaturesView({ data }: FeaturesViewProps) {
-    const { featureIntroData, featuresData } = data;
+    const { featureIntroData } = data;
     const { featureIntroHeading, featureIntroDescription } = featureIntroData;
 
     return (
@@ -28,8 +28,9 @@ function FeaturesView({ data }: FeaturesViewProps) {
             className='container bg-background-secondary py-16 lg:py-24 3xl:py-32'
         >
             <div
-                className='col-start-0 col-span-12 px-10 flex flex-col gap-10 gap-20
+                className='col-start-0 col-span-12 px-10 flex flex-col gap-10    
                 lg:col-start-2 lg:col-span-10 xl:px-0 3xl:col-start-3 3xl:col-span-8'>
+
                 {/* Section intro */}
                 <div className="flex flex-col items-center justify-center text-center gap-5 2xl:items-start 2xl:text-start">
                     <h2 className="text-3xl text-gray-800 md:text-4xl 2xl:md:text-5xl">
