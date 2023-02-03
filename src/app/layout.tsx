@@ -16,13 +16,13 @@ export default function RootLayout({
       <body>
 
         <div
-          className={`${public_sans.variable} scroll-smooth w-full max-w-full overflow-hidden font-primary-sans bg-background-default`}
+          className={`${public_sans.variable} scroll-smooth w-full max-w-full overflow-x-hidden font-primary-sans bg-background-default`}
         >
           <header className="">
             <Navigation data={navData} />
           </header>
 
-          <main className='container'>
+          <main>
             {children}
           </main>
 
@@ -37,7 +37,7 @@ export default function RootLayout({
 }
 
 //  Navigation Data 
-export const navData = {
+const navData = {
   navListItems: ['home', 'about', 'contact', 'blog', 'careers'],
   logoSrc: '/images/logo.svg',
 }

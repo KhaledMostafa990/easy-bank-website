@@ -6,6 +6,9 @@
   img {
     max-width: initial;
   }
+  p {
+    @apply leading-6 lg:leading-7 tracking-wider;
+  }
 }
 
 .container {

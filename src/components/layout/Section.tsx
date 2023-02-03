@@ -11,7 +11,11 @@ interface SectionProps {
 // Section Component
 export default function Section({ children, className, id, dataSection }: SectionProps) {
     return (
-        <section className={className} id={id} data-section={dataSection}>
+        <section
+            id={id}
+            data-section={dataSection}
+            className={`min-h-full  ${className}`}
+        >
             {children}
         </section>
     )
