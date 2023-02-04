@@ -7,9 +7,24 @@ export function useNavSectionObserver(navList: string[]) {
 
     navList.forEach((item: HTMLElement | any) => {
       const sections = document.querySelectorAll(`[data-section="${item}"]`);
-      sections.forEach((section) => section && observer.observe(section));
+
+      sections.forEach((section) => {
+        const linkToSection = document.querySelector(
+          `a[href="#${section.getAttribute('data-section')}"]`
+        );
+
+        linkToSection?.addEventListener('click', (e) => {
+          e.preventDefault();
+          section.scrollIntoView({
+            block: 'start',
+            behavior: 'smooth',
+          });
+        });
+
+        observer.observe(section);
+      });
     });
-  }, []);
+  }, [navList]);
 }
 
 function Observer() {
@@ -24,23 +39,14 @@ function Observer() {
 }
 
 function toggleActiveSection(entry: any) {
-  const intersectingAtrr = entry.target.getAttribute('data-section');
-  const links = document.querySelectorAll(`a[href="#${intersectingAtrr}"]`);
+  // toggle in/out view active
+  const linkToSection = document.querySelector(
+    `a[href="#${entry.target.getAttribute('data-section')}"]`
+  );
 
-  links.forEach((link) => {
-    // toggle in/out view active
-    if (!entry.isIntersecting) {
-      link.classList.remove('active');
-    } else {
-      link.classList.add('active');
-    }
-
-    // move to the section realted to the clicked link
-    link.addEventListener('click', () => {
-      entry.target.scrollIntoView({
-        block: 'center',
-        behavior: 'smooth',
-      });
-    });
-  });
+  if (entry.isIntersecting) {
+    linkToSection?.classList.add('active');
+  } else if (!entry.isIntersecting) {
+    linkToSection?.classList.remove('active');
+  }
 }

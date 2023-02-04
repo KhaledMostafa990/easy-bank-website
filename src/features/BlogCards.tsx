@@ -14,7 +14,7 @@ interface BlogCardsProps {
     }
 }
 
-function BlogCards({ data }: BlogCardsProps) {
+export default function BlogCards({ data }: BlogCardsProps) {
     const { blogCardsHeading, blogCards } = data
 
     return (
@@ -28,20 +28,18 @@ function BlogCards({ data }: BlogCardsProps) {
 
                 {/* Heading */}
                 <div className='text-center xl:text-start'>
-                    <h2 className='text-3xl text-heading-base 2xl:md:text-5xl'>
+                    <h3 className='text-3xl text-heading-base 2xl:md:text-5xl'>
                         {blogCardsHeading}
-                    </h2>
+                    </h3>
                 </div>
 
                 {/* Cards */}
                 <div className='grid grid-cols-1 gap-8 md:grid-cols-2 2xl:grid-cols-4'>
                     {blogCards.map((blogCard, index) => (
-                        <BlogCard index={index} blogCard={blogCard} />
+                        <BlogCard key={index} index={index} blogCard={blogCard} />
                     ))}
                 </div>
             </div>
         </Section>
     )
 }
-
-export default BlogCards

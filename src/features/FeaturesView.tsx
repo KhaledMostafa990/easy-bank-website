@@ -1,9 +1,9 @@
-import { Cards } from './../components/base/Cards';
+import { Card } from './../components/base/Card';
 
 import Section from '@/components/layout/Section'
 import React from 'react'
 
-// FeaturesView Component Interface
+
 interface FeaturesViewProps {
     data: {
         featureIntroData: {
@@ -18,7 +18,7 @@ interface FeaturesViewProps {
     }
 }
 
-function FeaturesView({ data }: FeaturesViewProps) {
+export default function FeaturesView({ data }: FeaturesViewProps) {
     const { featureIntroData } = data;
     const { featureIntroHeading, featureIntroDescription } = featureIntroData;
 
@@ -45,7 +45,7 @@ function FeaturesView({ data }: FeaturesViewProps) {
                 <div className="flex flex-col items-center justify-center">
                     <div className="grid grid-cols-1 gap-10 md:grid-cols-2 2xl:grid-cols-4">
                         {data.featuresData.map((feature, index) => (
-                            <Cards index={index} feature={feature} />
+                            <Card key={index} index={index} feature={feature} />
                         ))}
                     </div>
                 </div>
@@ -53,6 +53,4 @@ function FeaturesView({ data }: FeaturesViewProps) {
         </Section>
     )
 }
-
-export default FeaturesView
 

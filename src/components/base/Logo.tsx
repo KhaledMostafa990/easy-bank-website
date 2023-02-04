@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 export function Logo({ className, wrapperClasses, logoSrc }: { className?: string, wrapperClasses?: string, logoSrc: string }) {
@@ -6,7 +7,7 @@ export function Logo({ className, wrapperClasses, logoSrc }: { className?: strin
             <figure
                 className={`flex items-center ${wrapperClasses}`}
             >
-                <img
+                <Image
                     className={`object-cover ${className}`}
                     src={logoSrc}
                     alt={'logo img'}

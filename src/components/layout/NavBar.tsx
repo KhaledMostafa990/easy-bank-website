@@ -25,10 +25,14 @@ export const NavBar = ({ navRef, navListRef, navListItems }: { navRef: any, navL
                         return (
                             <li
                                 key={index}
-                                className={`${border} hover:bg-primary-default/[0.05] lg:py-0 lg:border-none`}>
+                                className={`${border} lg:py-0 lg:border-none mx-3`}>
                                 <a
                                     href={`#${item}`}
-                                    className='capitalize block py-4 lg:py-0 text-center text-heading-base font-medium hover:text-primary-default [&.active]:text-primary-default border-b-4 border-transparent [&.active]:border-primary-default lg:px-2 2xl:px-6'>
+                                    className='capitalize block py-4 text-center text-heading-base font-medium 
+                                    transition-all duration-200 border-b-4 border-transparent 
+                                    [&.active]:text-primary-default [&.active]:border-primary-default
+                                    [&.active]:hover:rounded-none [&.active]:hover:bg-transparent [&.active]:hover:px-0
+                                    lg:hover:rounded-full hover:bg-primary-default/[0.25] hover:lg:px-3 lg:py-0'>
                                     {item}
                                 </a>
                             </li>

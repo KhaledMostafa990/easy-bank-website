@@ -1,8 +1,8 @@
+import React from 'react'
 import { Logo, PrimaryButton } from '@/components/base'
 import Section from '@/components/layout/Section'
-import React from 'react'
+import { SvgIcon } from '../components/base/SvgIcon'
 
-// ContactFooter Component Interface
 interface ContactFooterProps {
     data: {
         footerLogoSrc: string
@@ -16,7 +16,7 @@ interface ContactFooterProps {
     }
 }
 
-function ContactFooter({ data }: ContactFooterProps) {
+export default function ContactFooter({ data }: ContactFooterProps) {
     const { footerLogoSrc, footerListItems, footerCopyright, footerSocialIcons } = data
 
     return (
@@ -40,12 +40,8 @@ function ContactFooter({ data }: ContactFooterProps) {
                                 rel='noreferrer'
                                 className='flex items-center justify-center'
                             >
-                                <img
-                                    src={icon.icon}
-                                    alt={icon.alt}
-                                    width={24}
-                                    height={24}
-                                />
+                                {/* Svg Icons */}
+                                <SvgIcon link={icon.link} alt={icon.alt} />
                             </a>
                         ))}
                     </div>
@@ -95,4 +91,5 @@ function ContactFooter({ data }: ContactFooterProps) {
     )
 }
 
-export default ContactFooter
+
+

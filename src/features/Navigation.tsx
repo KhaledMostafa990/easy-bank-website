@@ -1,14 +1,10 @@
 "use client";
 
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 
-import { HamburgerButton, Logo, PrimaryButton } from '@/components/base'
+import { HamburgerButton, Logo, PrimaryButton, Overlay } from '@/components/base'
 import { NavBar } from '@/components/layout';
-import { menuClickHandler } from '../utils/menuClickHandler';
-import { Overlay } from '@/components/base/Overlay';
-import { useheaderScrollHandler } from '@/utils/headerScrollHandler';
-import { useNavSectionObserver } from '@/utils/useSectionObserver';
-import { useToggleNavOnResize } from '@/utils/useToggleNavOnResize';
+import { menuClickHandler, useNavSectionObserver, useViewportOnResize } from '@/utils';
 
 interface NavigationProps {
     data: {
@@ -28,6 +24,7 @@ export default function Navigation(data: NavigationProps) {
     const overlayRef = useRef<HTMLElement | null>(null);
     const activeClass = 'active';
 
+    const { isDesktop } = useViewportOnResize();
     const toggleMenu = menuClickHandler(
         menuBtnRef.current,
         navRef.current,
@@ -36,13 +33,24 @@ export default function Navigation(data: NavigationProps) {
         activeClass
     );
 
-    const { isNavOpenDesktop } = useToggleNavOnResize();
-
-    if (isNavOpenDesktop && navRef?.current?.classList.contains('active')) toggleMenu();
-
-    useheaderScrollHandler(headerRef);
-
     useNavSectionObserver(navListItems);
+
+
+    if (isDesktop && navRef?.current?.classList.contains('active')) toggleMenu();
+
+    useEffect(() => {
+        if (!isDesktop) {
+            navListItems.forEach((item) => {
+                const navLink = document.querySelector(`a[href="#${item}"]`);
+                if (navLink) {
+                    navLink.addEventListener('click', () => {
+                        if (navRef?.current?.classList.contains('active')) toggleMenu();
+                    });
+                }
+            });
+        }
+    }, [isDesktop, navListItems, toggleMenu]);
+
 
     return (
         <>
@@ -51,8 +59,7 @@ export default function Navigation(data: NavigationProps) {
             <div
                 ref={headerRef}
                 className='container fixed bg-background-default
-                [&.scrolled-down]:bg-background-default shadow-md
-                transition-all duration-[0.84s] z-20'
+                shadow-sm transition-all duration-[0.84s] z-20'
             >
                 <div
                     className='col-start-2 col-span-10 3xl:col-start-3

@@ -1,7 +1,7 @@
-import { PrimaryButton } from '@/components/base';
-import Section from '@/components/layout/Section';
-import Image from 'next/image';
 import React from 'react'
+import Image from 'next/image';
+import { PrimaryButton } from '@/components/base';
+import Section from '@/components/layout/Section'
 
 interface HeroProps {
     data: {
@@ -14,7 +14,7 @@ interface HeroProps {
     }
 }
 
-function Hero(data: HeroProps) {
+export default function Hero(data: HeroProps) {
     const { heroHeading, heroDescription, heroBtnText, heroBgImageMob, heroBgImageDisk, heroImage } = data.data;
 
     return (
@@ -84,4 +84,3 @@ function Hero(data: HeroProps) {
     )
 }
 
-export default Hero

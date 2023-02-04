@@ -1,5 +1,5 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
 
 interface BlogCardProps {
     index: number;
@@ -18,12 +18,13 @@ export function BlogCard({ index, blogCard }: BlogCardProps) {
         <div key={index} className='flex flex-col rounded-md shadow-md'>
             <div className='flex-shrink-0'>
                 <Image
-                    className='object-cover w-full md:h-[200px] rounded-md rounded-b-none'
+                    className='w-full h-[250px] rounded-md rounded-b-none'
                     src={blogCardImage}
                     width={327}
                     height={200}
                     alt='Blog Card Image'
-                    priority
+                    loading="lazy"
+
                 />
             </div>
 
