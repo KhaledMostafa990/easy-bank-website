@@ -19,6 +19,7 @@ Users should be able to:
 
 ### Screenshot
 
+![](./Screenshot-from-2023-02-05--15-54-51.png)
 ![](./responsive_screen.png)
 
 ### Links
@@ -26,7 +27,7 @@ Users should be able to:
 - Solution URL: [Add solution URL here](https://www.frontendmentor.io/challenges/easybank-landing-page-WaUhkoDN/hub)
 - Live Site URL: [Add live site URL here](https://easy-bank-website-two.vercel.app/)
 
-## Built with
+### Built with
 
 - Semantic HTML5 markup
 - CSS
@@ -34,4 +35,15 @@ Users should be able to:
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
-- [TawilindCss](https://tailwindcss.com/) - For styles
+- [TawilindCss](https://tailwindcss.com/) - CSS Library for styles
+
+### Useful resources
+
+- [Elzero Web School](https://www.youtube.com/@ElzeroWebSchool) - for Arab developers
+- [Maxmilian Academind ](https://www.youtube.com/@academind) - for Javascript
+- [FrontendExpert & AlgoExpert](https://www.algoexpert.io/frontend) - for frontend developers
+- [Meta Frontend Developer](https://www.coursera.org/professional-certificates/meta-front-end-developer) - for frontend developers
+- [Dave Grey](https://www.youtube.com/@DaveGrayTeachesCode) - for Typescript
+- [Traversy Media](https://www.youtube.com/@TraversyMedia) - for Javasciprt and CSS
+- [TailwindCSS](https://tailwindcss.com/) - for TailwindCSS
+- [Linkedin Learning](https://www.linkedin.com/learning/) - for every developers
